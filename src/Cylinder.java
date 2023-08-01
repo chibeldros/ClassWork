@@ -16,12 +16,12 @@ public class Cylinder extends Shape implements IShapeCalc{
     }
 
     @Override
-    public double resultVolume() {
-        return (Math.PI * Math.pow(radius,2));
+    public void resultVolume() {
+        shapeVolume = (Math.PI * Math.pow(radius,2));
     }
 
     @Override
-    public double resultSquare() {
-        return (2.0 * Math.PI * radius * (radius + height));
+    public void resultSquare() {
+        shapeSquare = (2.0 * Math.PI * radius * (radius + height));
     }
 }

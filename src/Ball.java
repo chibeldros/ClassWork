@@ -12,12 +12,12 @@ public class Ball extends Shape implements IShapeCalc {
     }
 
     @Override
-    public double resultVolume() {
-        return (4.0 / 3.0) * Math.PI * Math.pow(radius,2);
+    public void resultVolume() {
+        shapeVolume = (4.0 / 3.0) * Math.PI * Math.pow(radius,2);
     }
 
     @Override
-    public double resultSquare() {
-        return 4.0 * Math.PI * Math.pow(radius,2);
+    public void resultSquare() {
+        shapeSquare = 4.0 * Math.PI * Math.pow(radius,2);
     }
 }

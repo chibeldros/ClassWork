@@ -1,5 +1,9 @@
 public interface IShapeCalc {
     void inputData();
-    double resultVolume();
-    double resultSquare();
+    void resultVolume();
+    void resultSquare();
+    default void resultPrint() {
+        System.out.println(this);
+    }
+
 }

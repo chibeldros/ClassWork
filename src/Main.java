@@ -9,58 +9,22 @@ public class Main {
         }
         Scanner inp = new Scanner(System.in);
         String typeShape = inp.nextLine();
-        switch (typeShape) {
-            case "Ball" -> {
-                Ball testBall = new Ball();
-                try {
-                    testBall.inputData();
-                    System.out.println("The square surf of the " + typeShape + " is " + testBall.resultSquare());
-                    System.out.println("The volume of the " + typeShape + " is " + testBall.resultVolume());
-                } catch (InputMismatchException e){
-                    System.out.println("Input error, not a number entered!");
-                }
-            }
-            case "Cylinder" -> {
-                Cylinder testCyl = new Cylinder();
-                try {
-                    testCyl.inputData();
-                    System.out.println("The square surf of the " + typeShape + " is " + testCyl.resultSquare());
-                    System.out.println("The volume of the " + typeShape + " is " + testCyl.resultVolume());
-                } catch (InputMismatchException e){
-                    System.out.println("Input error, not a number entered!");
-                }
-            }
-            case "Cube" -> {
-                Cube testCube = new Cube();
-                try {
-                    testCube.inputData();
-                    System.out.println("The square surf of the " + typeShape + " is " + testCube.resultSquare());
-                    System.out.println("The volume of the " + typeShape + " is " + testCube.resultVolume());
-                } catch (InputMismatchException e){
-                    System.out.println("Input error, not a number entered!");
-                }
-            }
-            case "Parallelepiped" -> {
-                Parallelepiped testParallelepiped = new Parallelepiped();
-                try {
-                    testParallelepiped.inputData();
-                    System.out.println("The square surf of the " + typeShape + " is " + testParallelepiped.resultSquare());
-                    System.out.println("The volume of the " + typeShape + " is " + testParallelepiped.resultVolume());
-                } catch (InputMismatchException e){
-                    System.out.println("Input error, not a number entered!");
-                }
-            }
-            case "Cone" -> {
-                Cone testCone = new Cone();
-                try {
-                    testCone.inputData();
-                    System.out.println("The square surf of the " + typeShape + " is " + testCone.resultSquare());
-                    System.out.println("The volume of the " + typeShape + " is " + testCone.resultVolume());
-                } catch (InputMismatchException e){
-                    System.out.println("Input error, not a number entered!");
-                }
-            }
-            default -> System.out.println("The entered shape object is not supported.");
-        }
-        }
+        calcShape(takeShape(ShapeTypes.valueOf(typeShape)));
     }
+
+    private static Shape takeShape(ShapeTypes value) {
+        return switch (value){
+            case Ball -> new Ball();
+            case Cone -> new Cone();
+            case Cube -> new Cube();
+            case Cylinder -> new Cylinder();
+            case Parallelepiped -> new Parallelepiped();
+        };
+    }
+    private static void calcShape(Shape shape) {
+        shape.inputData();
+        shape.resultVolume();
+        shape.resultSquare();
+        shape.resultPrint();
+    }
+}

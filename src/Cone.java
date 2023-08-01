@@ -13,13 +13,13 @@ public class Cone extends Shape implements IShapeCalc{
     }
 
     @Override
-    public double resultVolume() {
-        return (Math.PI * Math.pow(radius, 2) * height / 3);
+    public void resultVolume() {
+        shapeVolume = (Math.PI * Math.pow(radius, 2) * height / 3);
     }
 
     @Override
-    public double resultSquare() {
+    public void resultSquare() {
         double edge = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
-        return (Math.PI * radius * edge + Math.PI * Math.pow(radius, 2));
+        shapeSquare = (Math.PI * radius * edge + Math.PI * Math.pow(radius, 2));
     }
 }

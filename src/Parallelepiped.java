@@ -16,12 +16,12 @@ public class Parallelepiped extends Shape implements IShapeCalc{
     }
 
     @Override
-    public double resultVolume() {
-        return (width * length * height);
+    public void resultVolume() {
+        shapeVolume = (width * length * height);
     }
 
     @Override
-    public double resultSquare() {
-        return (2.0 * (width * length + width * height + length * height));
+    public void resultSquare() {
+        shapeSquare = (2.0 * (width * length + width * height + length * height));
     }
 }

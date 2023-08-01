@@ -11,12 +11,12 @@ public class Cube extends Shape implements IShapeCalc{
     }
 
     @Override
-    public double resultVolume() {
-        return (Math.pow(edge, 3));
+    public void resultVolume() {
+        shapeVolume = (Math.pow(edge, 3));
     }
 
     @Override
-    public double resultSquare() {
-        return (6.0 * Math.pow(edge, 2));
+    public void resultSquare() {
+        shapeSquare = (6.0 * Math.pow(edge, 2));
     }
 }
