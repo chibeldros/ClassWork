@@ -22,9 +22,14 @@ public class Main {
         };
     }
     private static void calcShape(Shape shape) {
-        shape.inputData();
-        shape.resultVolume();
-        shape.resultSquare();
-        shape.resultPrint();
+        try {
+            shape.inputData();
+            shape.resultVolume();
+            shape.resultSquare();
+            shape.resultPrint();
+        } catch (InputMismatchException e) {
+            System.out.println("InputMismatchException: it was not a number that was entered");;
+        }
     }
+
 }
